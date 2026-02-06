@@ -1,0 +1,326 @@
+/* ================= GLOBAL RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0b1220;
+  color: #e5e7eb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Fix navbar overlap on anchor click */
+section {
+  scroll-margin-top: 70px;
+  padding: 40px 0; /* reduced blank space */
+}
+
+/* ================= NAVBAR ================= */
+.dark-nav {
+  background: rgba(2, 6, 23, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #1e293b;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: #cbd5f5 !important;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* underline + glow */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #38bdf8 !important;
+  text-shadow: 0 0 12px rgba(56,189,248,0.6);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ================= HERO ================= */
+/* ================= HERO SECTION FIX ================= */
+.hero {
+  min-height: 45vh;          /* ⬅️ pehle 100vh tha */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;         /* navbar ke liye */
+  padding-bottom: 40px;      /* extra blank space hataya */
+}
+
+.hero h1 {
+  margin-bottom: 10px;       /* tight spacing */
+}
+
+.hero p {
+  margin-bottom: 0;
+}
+
+
+.hero h1 span {
+  transition: all 0.4s ease;
+}
+
+.hero h1 span:hover {
+  text-shadow: 0 0 18px rgba(56,189,248,0.9);
+  letter-spacing: 1px;
+}
+
+/* ================= SECTION TITLES ================= */
+.section-title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: #38bdf8;
+  display: block;
+  margin-top: 6px;
+  transition: width 0.4s ease;
+}
+
+.section-title:hover::after {
+  width: 90px;
+}
+
+/* ================= ABOUT ================= */
+.profile-img {
+  width: 230px;          /* pehle ~180px tha */
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  transition: transform 0.6s ease;
+}
+
+.profile-img:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+    #about p {
+    line-height: 1.7;
+    font-size: 0.95rem;
+    color: #cbd5f5;
+    }
+
+
+/* ================= SKILLS ================= */
+.skill-box {
+  background: #020617;
+  border: 1px solid #1e293b;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* shine sweep */
+.skill-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(56,189,248,0.15),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.skill-box:hover::after {
+  transform: translateX(100%);
+}
+
+.skill-box:hover {
+  background: #38bdf8;
+  color: #020617;
+  transform: translateY(-4px);
+}
+
+/* ================= ACADEMIC TIMELINE ================= */
+.timeline {
+  border-left: 2px solid #38bdf8;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
+  animation: fadeUp 1s ease forwards;
+}
+
+.timeline-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  padding: 12px;
+  border-radius: 10px;
+  transition: all 0.35s ease;
+}
+
+.timeline-card:hover {
+  transform: translateX(8px);
+  border-color: #38bdf8;
+  box-shadow: 0 10px 30px rgba(56,189,248,0.2);
+}
+
+/* ================= UNIVERSAL HOVER POP ================= */
+.hover-pop {
+  transition: all 0.35s ease;
+}
+
+.hover-pop:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(56,189,248,0.25);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  section {
+    padding: 30px 15px;
+  }
+
+  .hero {
+    min-height: 60vh;
+  }
+}
+/* ================= PORTFOLIO ================= */
+#portfolio {
+  background: #0b1220;
+}
+
+/* Project card */
+.project-card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+/* Image */
+.project-img img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Content */
+.project-content {
+  padding: 15px;
+}
+
+.project-content h5 {
+  margin-bottom: 5px;
+}
+
+.project-content p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Hover effects */
+.project-card:hover .project-img img {
+  transform: scale(1.08);
+}
+
+.project-card:hover {
+  box-shadow: 0 20px 45px rgba(56,189,248,0.25);
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .project-img img {
+    height: 160px;
+  }
+}
+/* ================= CONTACT ================= */
+#contact {
+  background: #020617;
+}
+
+.contact-form {
+  background: #0f172a;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #1e293b;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.contact-form .form-control {
+  background: #020617;
+  border: 1px solid #1e293b;
+  color: #e5e7eb;
+}
+
+.contact-form .form-control::placeholder {
+  color: #94a3b8;
+}
+
+.contact-form .form-control:focus {
+  background: #020617;
+  color: #e5e7eb;
+  border-color: #38bdf8;
+  box-shadow: none;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #020617;
+  border-top: 1px solid #1e293b;
+  padding: 20px 0;
+  color: #94a3b8;
+}
